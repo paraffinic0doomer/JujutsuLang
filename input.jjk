@@ -1,0 +1,13 @@
+// This is a JujutsuLang program
+/* hello */
+CursedEnergy CursedBattle() {
+    CursedEnergy a Bind 108;
+    CursedEnergy b Bind 10;
+    CursedEnergy sum Bind a Add b;
+
+    TriggerCondition (sum Above 10) {
+        SukunaRelease sum;
+    } CounterMove {
+        SukunaRelease 0;
+    }
+}

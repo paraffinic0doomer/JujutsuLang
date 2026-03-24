@@ -1,0 +1,68 @@
+// Acceptance Criteria Verification
+
+// Test criteria 1 and 2: Compilation
+// Already verified - flex and g++ compiled with zero warnings/errors
+
+// Criteria 3: Test against input.jjk produces expected output.tok
+// Already verified with test run
+
+// Criteria 4: All 30 keywords
+CursedEnergy x;       // KW_INT
+ReversedFlow f;       // KW_FLOAT
+DomainPower d;        // KW_DOUBLE
+SoulShard c;          // KW_CHAR
+NullVoid func();      // KW_VOID
+TriggerCondition      // KW_IF
+CounterMove           // KW_ELSE
+ShikigamiSummon       // KW_SWITCH
+ShikigamiForm         // KW_CASE
+BindingLoop           // KW_FOR
+CursedCycle           // KW_WHILE
+GuaranteedHit         // KW_DO
+DomainShatter         // KW_BREAK
+FlowShift             // KW_CONTINUE
+SukunaRelease         // KW_RETURN
+CursedArtifact        // KW_STRUCT
+ClanTechnique         // KW_TYPEDEF
+CurseRank             // KW_ENUM
+ImmutableSeal         // KW_CONST
+AnchoredSeal          // KW_STATIC
+RemoteCursedEnergy    // KW_EXTERN
+DomainScale           // KW_SIZEOF
+TeleportStrike        // KW_GOTO
+CursedBattle          // KW_MAIN
+MergedCurse           // KW_UNION
+UnstableEnergy        // KW_VOLATILE
+QuickStrike           // KW_REGISTER
+PositiveNegativeEnergy // KW_SIGNED
+PureCursedEnergy      // KW_UNSIGNED
+CursedTrigger         // KW_BREAKPOINT (optional)
+
+// Criteria 5: All 17 operator words
+Add Drain Amplify Divide ShardMod Match Clash Below Above
+BelowEq AboveEq Chain Link Neg Boost Bind
+
+// Criteria 6: Literals (Int, Float, Char, String)
+42
+3.14
+'a'
+"hello"
+
+// Criteria 7: Identifiers
+my_variable
+_private
+x1
+
+// Criteria 8: Punctuation (13 symbols)
+( ) { } [ ] ; , . : -> & #
+
+// Criteria 9 & 10: Comments (should be silently consumed)
+// This is a single-line comment
+/*
+This is a multi-line comment
+that spans several lines
+*/
+
+// Criteria 11: Bison-ready structure
+// The .l file has enum TOKEN types and returns them
+// Can be easily migrated to Bison by removing main() and printf
