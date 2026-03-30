@@ -129,7 +129,7 @@ extern int yydebug;
 #if ! defined YYSTYPE && ! defined YYSTYPE_IS_DECLARED
 union YYSTYPE
 {
-#line 119 "jujutsu.y"
+#line 119 "/home/saif/Desktop/JujutsuLang/jujutsu.y"
 
     int ival;
     double fval;
@@ -151,7 +151,7 @@ extern YYSTYPE yylval;
 int yyparse (void);
 
 /* "%code provides" blocks.  */
-#line 17 "jujutsu.y"
+#line 17 "/home/saif/Desktop/JujutsuLang/jujutsu.y"
 
     #define YY_DECL int yylex(void)
     extern int yylex(void);

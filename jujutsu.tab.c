@@ -64,7 +64,7 @@
 #define YYPULL 1
 
 /* "%code top" blocks.  */
-#line 11 "jujutsu.y"
+#line 11 "/home/saif/Desktop/JujutsuLang/jujutsu.y"
 
     #include <stdio.h>
     #include <stdlib.h>
@@ -75,7 +75,7 @@
 
 
 /* First part of user prologue.  */
-#line 24 "jujutsu.y"
+#line 24 "/home/saif/Desktop/JujutsuLang/jujutsu.y"
 
 #include <map>
 #include <vector>
@@ -1430,7 +1430,7 @@ yyreduce:
   switch (yyn)
     {
   case 7: /* declaration: KW_STRUCT IDENTIFIER LBRACE declaration_list RBRACE SEMICOLON  */
-#line 191 "jujutsu.y"
+#line 191 "/home/saif/Desktop/JujutsuLang/jujutsu.y"
     {
         fprintf(yyout, "[DECL] Struct declared: %s\n", (yyvsp[-4].sval));
     }
@@ -1438,7 +1438,7 @@ yyreduce:
     break;
 
   case 10: /* declarator: IDENTIFIER  */
-#line 203 "jujutsu.y"
+#line 203 "/home/saif/Desktop/JujutsuLang/jujutsu.y"
     {
         if (current_decl_type == 4) {
             fprintf(stderr, "[SEMANTIC ERROR] Variable '%s' cannot have type void at line %d\n", (yyvsp[0].sval), line_number);
@@ -1454,7 +1454,7 @@ yyreduce:
     break;
 
   case 11: /* declarator: IDENTIFIER OP_ASSIGN expression  */
-#line 215 "jujutsu.y"
+#line 215 "/home/saif/Desktop/JujutsuLang/jujutsu.y"
     {
         if (current_decl_type == 4) {
             fprintf(stderr, "[SEMANTIC ERROR] Variable '%s' cannot have type void at line %d\n", (yyvsp[-2].sval), line_number);
@@ -1472,37 +1472,37 @@ yyreduce:
     break;
 
   case 14: /* type: KW_INT  */
-#line 236 "jujutsu.y"
+#line 236 "/home/saif/Desktop/JujutsuLang/jujutsu.y"
                  { (yyval.ival) = 0; current_decl_type = (yyval.ival); }
 #line 1478 "jujutsu.tab.c"
     break;
 
   case 15: /* type: KW_FLOAT  */
-#line 237 "jujutsu.y"
+#line 237 "/home/saif/Desktop/JujutsuLang/jujutsu.y"
                  { (yyval.ival) = 1; current_decl_type = (yyval.ival); }
 #line 1484 "jujutsu.tab.c"
     break;
 
   case 16: /* type: KW_DOUBLE  */
-#line 238 "jujutsu.y"
+#line 238 "/home/saif/Desktop/JujutsuLang/jujutsu.y"
                  { (yyval.ival) = 2; current_decl_type = (yyval.ival); }
 #line 1490 "jujutsu.tab.c"
     break;
 
   case 17: /* type: KW_CHAR  */
-#line 239 "jujutsu.y"
+#line 239 "/home/saif/Desktop/JujutsuLang/jujutsu.y"
                  { (yyval.ival) = 3; current_decl_type = (yyval.ival); }
 #line 1496 "jujutsu.tab.c"
     break;
 
   case 18: /* type: KW_VOID  */
-#line 240 "jujutsu.y"
+#line 240 "/home/saif/Desktop/JujutsuLang/jujutsu.y"
                  { (yyval.ival) = 4; current_decl_type = (yyval.ival); }
 #line 1502 "jujutsu.tab.c"
     break;
 
   case 28: /* io_statement: KW_PRINTF LPAREN LIT_STRING RPAREN SEMICOLON  */
-#line 258 "jujutsu.y"
+#line 258 "/home/saif/Desktop/JujutsuLang/jujutsu.y"
     {
         if (execution_enabled) {
             emit_ir("PRINT_STR", (yyvsp[-2].sval), "", "");
@@ -1513,7 +1513,7 @@ yyreduce:
     break;
 
   case 29: /* io_statement: KW_PRINTF LPAREN IDENTIFIER RPAREN SEMICOLON  */
-#line 265 "jujutsu.y"
+#line 265 "/home/saif/Desktop/JujutsuLang/jujutsu.y"
     {
         if (execution_enabled) {
             if (!symbol_exists((yyvsp[-2].sval))) {
@@ -1528,7 +1528,7 @@ yyreduce:
     break;
 
   case 30: /* io_statement: KW_PRINTF LPAREN expression RPAREN SEMICOLON  */
-#line 276 "jujutsu.y"
+#line 276 "/home/saif/Desktop/JujutsuLang/jujutsu.y"
     {
         if (execution_enabled) {
             emit_ir("PRINT_NUM", format_num((yyvsp[-2].fval)), "", "");
@@ -1539,7 +1539,7 @@ yyreduce:
     break;
 
   case 31: /* io_statement: KW_SCANF LPAREN LIT_STRING COMMA AMPERSAND IDENTIFIER RPAREN SEMICOLON  */
-#line 283 "jujutsu.y"
+#line 283 "/home/saif/Desktop/JujutsuLang/jujutsu.y"
     {
         if (execution_enabled) {
         double input_value = 0;
@@ -1558,7 +1558,7 @@ yyreduce:
     break;
 
   case 32: /* io_statement: KW_SCANF LPAREN IDENTIFIER RPAREN SEMICOLON  */
-#line 298 "jujutsu.y"
+#line 298 "/home/saif/Desktop/JujutsuLang/jujutsu.y"
     {
         if (execution_enabled) {
         double input_value = 0;
@@ -1577,7 +1577,7 @@ yyreduce:
     break;
 
   case 33: /* io_statement: KW_SCANF LPAREN AMPERSAND IDENTIFIER RPAREN SEMICOLON  */
-#line 313 "jujutsu.y"
+#line 313 "/home/saif/Desktop/JujutsuLang/jujutsu.y"
     {
         if (execution_enabled) {
         double input_value = 0;
@@ -1596,7 +1596,7 @@ yyreduce:
     break;
 
   case 36: /* compound_statement: LBRACE statement_list RBRACE  */
-#line 336 "jujutsu.y"
+#line 336 "/home/saif/Desktop/JujutsuLang/jujutsu.y"
     {
         fprintf(yyout, "[BLOCK] Compound statement executed\n");
     }
@@ -1604,7 +1604,7 @@ yyreduce:
     break;
 
   case 40: /* $@1: %empty  */
-#line 349 "jujutsu.y"
+#line 349 "/home/saif/Desktop/JujutsuLang/jujutsu.y"
     {
         exec_stack.push_back(execution_enabled);
         if_cond_stack.push_back((yyvsp[-1].fval) != 0);
@@ -1614,7 +1614,7 @@ yyreduce:
     break;
 
   case 41: /* if_statement: KW_IF LPAREN expression RPAREN $@1 statement if_else_part  */
-#line 356 "jujutsu.y"
+#line 356 "/home/saif/Desktop/JujutsuLang/jujutsu.y"
     {
         int parent_exec = exec_stack.back();
         int cond_true = if_cond_stack.back();
@@ -1644,7 +1644,7 @@ yyreduce:
     break;
 
   case 42: /* if_else_part: %empty  */
-#line 385 "jujutsu.y"
+#line 385 "/home/saif/Desktop/JujutsuLang/jujutsu.y"
     {
         (yyval.ival) = 0;
     }
@@ -1652,7 +1652,7 @@ yyreduce:
     break;
 
   case 43: /* $@2: %empty  */
-#line 389 "jujutsu.y"
+#line 389 "/home/saif/Desktop/JujutsuLang/jujutsu.y"
     {
         int parent_exec = exec_stack.back();
         int cond_true = if_cond_stack.back();
@@ -1662,7 +1662,7 @@ yyreduce:
     break;
 
   case 44: /* if_else_part: KW_ELSE $@2 statement  */
-#line 395 "jujutsu.y"
+#line 395 "/home/saif/Desktop/JujutsuLang/jujutsu.y"
     {
         (yyval.ival) = 1;
     }
@@ -1670,7 +1670,7 @@ yyreduce:
     break;
 
   case 45: /* $@3: %empty  */
-#line 402 "jujutsu.y"
+#line 402 "/home/saif/Desktop/JujutsuLang/jujutsu.y"
     {
         exec_stack.push_back(execution_enabled);
         execution_enabled = execution_enabled && ((yyvsp[0].fval) != 0);
@@ -1679,7 +1679,7 @@ yyreduce:
     break;
 
   case 46: /* loop_statement: KW_FOR LPAREN expression SEMICOLON expression $@3 SEMICOLON expression RPAREN statement  */
-#line 408 "jujutsu.y"
+#line 408 "/home/saif/Desktop/JujutsuLang/jujutsu.y"
     {
         int parent_exec = exec_stack.back();
         exec_stack.pop_back();
@@ -1694,7 +1694,7 @@ yyreduce:
     break;
 
   case 47: /* $@4: %empty  */
-#line 419 "jujutsu.y"
+#line 419 "/home/saif/Desktop/JujutsuLang/jujutsu.y"
     {
         exec_stack.push_back(execution_enabled);
         execution_enabled = execution_enabled && ((yyvsp[-1].fval) != 0);
@@ -1703,7 +1703,7 @@ yyreduce:
     break;
 
   case 48: /* loop_statement: KW_WHILE LPAREN expression RPAREN $@4 statement  */
-#line 424 "jujutsu.y"
+#line 424 "/home/saif/Desktop/JujutsuLang/jujutsu.y"
     {
         int parent_exec = exec_stack.back();
         exec_stack.pop_back();
@@ -1718,7 +1718,7 @@ yyreduce:
     break;
 
   case 49: /* loop_statement: KW_DO statement KW_WHILE LPAREN expression RPAREN SEMICOLON  */
-#line 435 "jujutsu.y"
+#line 435 "/home/saif/Desktop/JujutsuLang/jujutsu.y"
     {
         if (execution_enabled) {
             emit_ir("DO_WHILE", format_num((yyvsp[-2].fval)), "", "");
@@ -1729,7 +1729,7 @@ yyreduce:
     break;
 
   case 50: /* return_statement: KW_RETURN SEMICOLON  */
-#line 445 "jujutsu.y"
+#line 445 "/home/saif/Desktop/JujutsuLang/jujutsu.y"
     {
         if (function_depth <= 0) {
             fprintf(stderr, "[SEMANTIC ERROR] 'SukunaRelease' is only valid inside a function (line %d)\n", line_number);
@@ -1744,7 +1744,7 @@ yyreduce:
     break;
 
   case 51: /* return_statement: KW_RETURN expression SEMICOLON  */
-#line 456 "jujutsu.y"
+#line 456 "/home/saif/Desktop/JujutsuLang/jujutsu.y"
     {
         if (function_depth <= 0) {
             fprintf(stderr, "[SEMANTIC ERROR] 'SukunaRelease' is only valid inside a function (line %d)\n", line_number);
@@ -1759,7 +1759,7 @@ yyreduce:
     break;
 
   case 52: /* break_statement: KW_BREAK SEMICOLON  */
-#line 470 "jujutsu.y"
+#line 470 "/home/saif/Desktop/JujutsuLang/jujutsu.y"
     {
         if (execution_enabled) {
             break_flag = true;
@@ -1771,7 +1771,7 @@ yyreduce:
     break;
 
   case 53: /* continue_statement: KW_CONTINUE SEMICOLON  */
-#line 481 "jujutsu.y"
+#line 481 "/home/saif/Desktop/JujutsuLang/jujutsu.y"
     {
         if (execution_enabled) {
             continue_flag = true;
@@ -1783,7 +1783,7 @@ yyreduce:
     break;
 
   case 54: /* switch_statement: KW_SWITCH LPAREN expression RPAREN LBRACE case_list RBRACE  */
-#line 492 "jujutsu.y"
+#line 492 "/home/saif/Desktop/JujutsuLang/jujutsu.y"
     {
         if (execution_enabled) {
             emit_ir("SWITCH", format_num((yyvsp[-4].fval)), "", "");
@@ -1794,7 +1794,7 @@ yyreduce:
     break;
 
   case 57: /* case_item: KW_CASE expression COLON statement_list  */
-#line 507 "jujutsu.y"
+#line 507 "/home/saif/Desktop/JujutsuLang/jujutsu.y"
     {
         if (execution_enabled) {
             emit_ir("CASE", format_num((yyvsp[-2].fval)), "", "");
@@ -1805,7 +1805,7 @@ yyreduce:
     break;
 
   case 58: /* expression: assignment_expr  */
-#line 518 "jujutsu.y"
+#line 518 "/home/saif/Desktop/JujutsuLang/jujutsu.y"
     {
         (yyval.fval) = (yyvsp[0].fval);
     }
@@ -1813,7 +1813,7 @@ yyreduce:
     break;
 
   case 59: /* assignment_expr: logical_or_expr  */
-#line 525 "jujutsu.y"
+#line 525 "/home/saif/Desktop/JujutsuLang/jujutsu.y"
     {
         (yyval.fval) = (yyvsp[0].fval);
     }
@@ -1821,7 +1821,7 @@ yyreduce:
     break;
 
   case 60: /* assignment_expr: IDENTIFIER OP_ASSIGN assignment_expr  */
-#line 529 "jujutsu.y"
+#line 529 "/home/saif/Desktop/JujutsuLang/jujutsu.y"
     {
         if (!execution_enabled) {
             (yyval.fval) = (yyvsp[0].fval);
@@ -1838,7 +1838,7 @@ yyreduce:
     break;
 
   case 61: /* logical_or_expr: logical_and_expr  */
-#line 545 "jujutsu.y"
+#line 545 "/home/saif/Desktop/JujutsuLang/jujutsu.y"
     {
         (yyval.fval) = (yyvsp[0].fval);
     }
@@ -1846,7 +1846,7 @@ yyreduce:
     break;
 
   case 62: /* logical_or_expr: logical_or_expr OP_OR logical_and_expr  */
-#line 549 "jujutsu.y"
+#line 549 "/home/saif/Desktop/JujutsuLang/jujutsu.y"
     {
         if (!execution_enabled) {
             (yyval.fval) = 0;
@@ -1860,7 +1860,7 @@ yyreduce:
     break;
 
   case 63: /* logical_and_expr: equality_expr  */
-#line 562 "jujutsu.y"
+#line 562 "/home/saif/Desktop/JujutsuLang/jujutsu.y"
     {
         (yyval.fval) = (yyvsp[0].fval);
     }
@@ -1868,7 +1868,7 @@ yyreduce:
     break;
 
   case 64: /* logical_and_expr: logical_and_expr OP_AND equality_expr  */
-#line 566 "jujutsu.y"
+#line 566 "/home/saif/Desktop/JujutsuLang/jujutsu.y"
     {
         if (!execution_enabled) {
             (yyval.fval) = 0;
@@ -1882,7 +1882,7 @@ yyreduce:
     break;
 
   case 65: /* equality_expr: relational_expr  */
-#line 579 "jujutsu.y"
+#line 579 "/home/saif/Desktop/JujutsuLang/jujutsu.y"
     {
         (yyval.fval) = (yyvsp[0].fval);
     }
@@ -1890,7 +1890,7 @@ yyreduce:
     break;
 
   case 66: /* equality_expr: equality_expr OP_EQ relational_expr  */
-#line 583 "jujutsu.y"
+#line 583 "/home/saif/Desktop/JujutsuLang/jujutsu.y"
     {
         if (!execution_enabled) {
             (yyval.fval) = 0;
@@ -1904,7 +1904,7 @@ yyreduce:
     break;
 
   case 67: /* equality_expr: equality_expr OP_NEQ relational_expr  */
-#line 593 "jujutsu.y"
+#line 593 "/home/saif/Desktop/JujutsuLang/jujutsu.y"
     {
         if (!execution_enabled) {
             (yyval.fval) = 0;
@@ -1918,7 +1918,7 @@ yyreduce:
     break;
 
   case 68: /* relational_expr: additive_expr  */
-#line 606 "jujutsu.y"
+#line 606 "/home/saif/Desktop/JujutsuLang/jujutsu.y"
     {
         (yyval.fval) = (yyvsp[0].fval);
     }
@@ -1926,7 +1926,7 @@ yyreduce:
     break;
 
   case 69: /* relational_expr: relational_expr OP_LT additive_expr  */
-#line 610 "jujutsu.y"
+#line 610 "/home/saif/Desktop/JujutsuLang/jujutsu.y"
     {
         if (!execution_enabled) {
             (yyval.fval) = 0;
@@ -1940,7 +1940,7 @@ yyreduce:
     break;
 
   case 70: /* relational_expr: relational_expr OP_GT additive_expr  */
-#line 620 "jujutsu.y"
+#line 620 "/home/saif/Desktop/JujutsuLang/jujutsu.y"
     {
         if (!execution_enabled) {
             (yyval.fval) = 0;
@@ -1954,7 +1954,7 @@ yyreduce:
     break;
 
   case 71: /* relational_expr: relational_expr OP_LTE additive_expr  */
-#line 630 "jujutsu.y"
+#line 630 "/home/saif/Desktop/JujutsuLang/jujutsu.y"
     {
         if (!execution_enabled) {
             (yyval.fval) = 0;
@@ -1968,7 +1968,7 @@ yyreduce:
     break;
 
   case 72: /* relational_expr: relational_expr OP_GTE additive_expr  */
-#line 640 "jujutsu.y"
+#line 640 "/home/saif/Desktop/JujutsuLang/jujutsu.y"
     {
         if (!execution_enabled) {
             (yyval.fval) = 0;
@@ -1982,7 +1982,7 @@ yyreduce:
     break;
 
   case 73: /* additive_expr: multiplicative_expr  */
-#line 653 "jujutsu.y"
+#line 653 "/home/saif/Desktop/JujutsuLang/jujutsu.y"
     {
         (yyval.fval) = (yyvsp[0].fval);
     }
@@ -1990,7 +1990,7 @@ yyreduce:
     break;
 
   case 74: /* additive_expr: additive_expr OP_ADD multiplicative_expr  */
-#line 657 "jujutsu.y"
+#line 657 "/home/saif/Desktop/JujutsuLang/jujutsu.y"
     {
         if (!execution_enabled) {
             (yyval.fval) = 0;
@@ -2004,7 +2004,7 @@ yyreduce:
     break;
 
   case 75: /* additive_expr: additive_expr OP_DRAIN multiplicative_expr  */
-#line 667 "jujutsu.y"
+#line 667 "/home/saif/Desktop/JujutsuLang/jujutsu.y"
     {
         if (!execution_enabled) {
             (yyval.fval) = 0;
@@ -2018,7 +2018,7 @@ yyreduce:
     break;
 
   case 76: /* multiplicative_expr: unary_expr  */
-#line 680 "jujutsu.y"
+#line 680 "/home/saif/Desktop/JujutsuLang/jujutsu.y"
     {
         (yyval.fval) = (yyvsp[0].fval);
     }
@@ -2026,7 +2026,7 @@ yyreduce:
     break;
 
   case 77: /* multiplicative_expr: multiplicative_expr OP_MUL unary_expr  */
-#line 684 "jujutsu.y"
+#line 684 "/home/saif/Desktop/JujutsuLang/jujutsu.y"
     {
         if (!execution_enabled) {
             (yyval.fval) = 0;
@@ -2040,7 +2040,7 @@ yyreduce:
     break;
 
   case 78: /* multiplicative_expr: multiplicative_expr OP_DIV unary_expr  */
-#line 694 "jujutsu.y"
+#line 694 "/home/saif/Desktop/JujutsuLang/jujutsu.y"
     {
         if (!execution_enabled) {
             (yyval.fval) = 0;
@@ -2057,7 +2057,7 @@ yyreduce:
     break;
 
   case 79: /* multiplicative_expr: multiplicative_expr OP_MOD unary_expr  */
-#line 707 "jujutsu.y"
+#line 707 "/home/saif/Desktop/JujutsuLang/jujutsu.y"
     {
         if (!execution_enabled) {
             (yyval.fval) = 0;
@@ -2074,7 +2074,7 @@ yyreduce:
     break;
 
   case 80: /* unary_expr: postfix_expr  */
-#line 723 "jujutsu.y"
+#line 723 "/home/saif/Desktop/JujutsuLang/jujutsu.y"
     {
         (yyval.fval) = (yyvsp[0].fval);
     }
@@ -2082,7 +2082,7 @@ yyreduce:
     break;
 
   case 81: /* unary_expr: OP_NOT unary_expr  */
-#line 727 "jujutsu.y"
+#line 727 "/home/saif/Desktop/JujutsuLang/jujutsu.y"
     {
         if (!execution_enabled) {
             (yyval.fval) = 0;
@@ -2096,7 +2096,7 @@ yyreduce:
     break;
 
   case 82: /* unary_expr: OP_DRAIN unary_expr  */
-#line 737 "jujutsu.y"
+#line 737 "/home/saif/Desktop/JujutsuLang/jujutsu.y"
     {
         if (!execution_enabled) {
             (yyval.fval) = 0;
@@ -2110,7 +2110,7 @@ yyreduce:
     break;
 
   case 83: /* unary_expr: OP_INC IDENTIFIER  */
-#line 747 "jujutsu.y"
+#line 747 "/home/saif/Desktop/JujutsuLang/jujutsu.y"
     {
         if (!execution_enabled) {
             (yyval.fval) = 0;
@@ -2129,7 +2129,7 @@ yyreduce:
     break;
 
   case 84: /* postfix_expr: primary_expr  */
-#line 765 "jujutsu.y"
+#line 765 "/home/saif/Desktop/JujutsuLang/jujutsu.y"
     {
         (yyval.fval) = (yyvsp[0].fval);
     }
@@ -2137,7 +2137,7 @@ yyreduce:
     break;
 
   case 85: /* postfix_expr: IDENTIFIER OP_INC  */
-#line 769 "jujutsu.y"
+#line 769 "/home/saif/Desktop/JujutsuLang/jujutsu.y"
     {
         if (!execution_enabled) {
             (yyval.fval) = 0;
@@ -2156,7 +2156,7 @@ yyreduce:
     break;
 
   case 86: /* postfix_expr: IDENTIFIER LPAREN RPAREN  */
-#line 784 "jujutsu.y"
+#line 784 "/home/saif/Desktop/JujutsuLang/jujutsu.y"
     {
         if (!execution_enabled) {
             (yyval.fval) = 0;
@@ -2174,7 +2174,7 @@ yyreduce:
     break;
 
   case 87: /* postfix_expr: IDENTIFIER LPAREN argument_list RPAREN  */
-#line 798 "jujutsu.y"
+#line 798 "/home/saif/Desktop/JujutsuLang/jujutsu.y"
     {
         if (!execution_enabled) {
             (yyval.fval) = 0;
@@ -2192,7 +2192,7 @@ yyreduce:
     break;
 
   case 90: /* primary_expr: IDENTIFIER  */
-#line 820 "jujutsu.y"
+#line 820 "/home/saif/Desktop/JujutsuLang/jujutsu.y"
     {
         if (!execution_enabled) {
             (yyval.fval) = 0;
@@ -2209,7 +2209,7 @@ yyreduce:
     break;
 
   case 91: /* primary_expr: LIT_INT  */
-#line 833 "jujutsu.y"
+#line 833 "/home/saif/Desktop/JujutsuLang/jujutsu.y"
     {
         if (!execution_enabled) {
             (yyval.fval) = 0;
@@ -2223,7 +2223,7 @@ yyreduce:
     break;
 
   case 92: /* primary_expr: LIT_FLOAT  */
-#line 843 "jujutsu.y"
+#line 843 "/home/saif/Desktop/JujutsuLang/jujutsu.y"
     {
         if (!execution_enabled) {
             (yyval.fval) = 0;
@@ -2237,7 +2237,7 @@ yyreduce:
     break;
 
   case 93: /* primary_expr: LPAREN expression RPAREN  */
-#line 853 "jujutsu.y"
+#line 853 "/home/saif/Desktop/JujutsuLang/jujutsu.y"
     {
         (yyval.fval) = (yyvsp[-1].fval);
         fprintf(yyout, "[EXPR] Parenthesized expression: %g\n", (yyval.fval));
@@ -2246,7 +2246,7 @@ yyreduce:
     break;
 
   case 94: /* $@5: %empty  */
-#line 862 "jujutsu.y"
+#line 862 "/home/saif/Desktop/JujutsuLang/jujutsu.y"
     {
         exec_stack.push_back(execution_enabled);
 
@@ -2268,7 +2268,7 @@ yyreduce:
     break;
 
   case 95: /* function_def: type IDENTIFIER LPAREN RPAREN $@5 compound_statement  */
-#line 880 "jujutsu.y"
+#line 880 "/home/saif/Desktop/JujutsuLang/jujutsu.y"
     {
         int parent_exec = exec_stack.back();
         exec_stack.pop_back();
@@ -2303,7 +2303,7 @@ yyreduce:
     break;
 
   case 96: /* $@6: %empty  */
-#line 911 "jujutsu.y"
+#line 911 "/home/saif/Desktop/JujutsuLang/jujutsu.y"
     {
         exec_stack.push_back(execution_enabled);
 
@@ -2325,7 +2325,7 @@ yyreduce:
     break;
 
   case 97: /* function_def: type IDENTIFIER LPAREN parameter_list RPAREN $@6 compound_statement  */
-#line 929 "jujutsu.y"
+#line 929 "/home/saif/Desktop/JujutsuLang/jujutsu.y"
     {
         int parent_exec = exec_stack.back();
         exec_stack.pop_back();
@@ -2358,7 +2358,7 @@ yyreduce:
     break;
 
   case 98: /* parameter_list: type IDENTIFIER  */
-#line 961 "jujutsu.y"
+#line 961 "/home/saif/Desktop/JujutsuLang/jujutsu.y"
     {
         if (!functions.empty()) {
             // no-op placeholder: parameters are displayed; functional arg binding is outside this educational scope
@@ -2369,7 +2369,7 @@ yyreduce:
     break;
 
   case 99: /* parameter_list: parameter_list COMMA type IDENTIFIER  */
-#line 968 "jujutsu.y"
+#line 968 "/home/saif/Desktop/JujutsuLang/jujutsu.y"
     {
         fprintf(yyout, "[PARAM] Parameter: %s\n", (yyvsp[0].sval));
     }
@@ -2570,7 +2570,7 @@ yyreturnlab:
   return yyresult;
 }
 
-#line 973 "jujutsu.y"
+#line 973 "/home/saif/Desktop/JujutsuLang/jujutsu.y"
 
 
 /* ================================================================== */

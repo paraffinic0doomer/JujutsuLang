@@ -1,6 +1,6 @@
-#line 2 "lex.yy.c"
+#line 2 "/home/saif/Desktop/JujutsuLang/lex.yy.c"
 
-#line 4 "lex.yy.c"
+#line 4 "/home/saif/Desktop/JujutsuLang/lex.yy.c"
 
 #define  YY_INT_ALIGNED short int
 
@@ -703,7 +703,7 @@ int yy_flex_debug = 0;
 #define YY_MORE_ADJ 0
 #define YY_RESTORE_YY_MORE_OFFSET
 char *yytext;
-#line 1 "jujutsu.l"
+#line 1 "/home/saif/Desktop/JujutsuLang/jujutsu.l"
 /* ================================================================== */
 /*  jujutsu.l — Flex lexer for JujutsuLang                            */
 /*  Phase 1: Standalone tokeniser (Bison-ready)                       */
@@ -712,9 +712,9 @@ char *yytext;
 /*      flex -o lex.yy.cpp jujutsu.l                                  */
 /*      g++ -o jujutsu lex.yy.cpp -lfl                                */
 /*  Run:                                                              */
-/*      ./jujutsu input.jjk output.tok                                */
+/*      ./jujutsucc input.jjk                                */
 /* ================================================================== */
-#line 13 "jujutsu.l"
+#line 13 "/home/saif/Desktop/JujutsuLang/jujutsu.l"
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -740,12 +740,12 @@ int line_number = 1;
     return tag; \
 } while (0)
 
-#line 744 "lex.yy.c"
-#line 41 "jujutsu.l"
+#line 744 "/home/saif/Desktop/JujutsuLang/lex.yy.c"
+#line 41 "/home/saif/Desktop/JujutsuLang/jujutsu.l"
     /* Flex options */
     /* Start condition for multi-line comments */
 
-#line 749 "lex.yy.c"
+#line 749 "/home/saif/Desktop/JujutsuLang/lex.yy.c"
 
 #define INITIAL 0
 #define COMMENT 1
@@ -961,14 +961,14 @@ YY_DECL
 		}
 
 	{
-#line 48 "jujutsu.l"
+#line 48 "/home/saif/Desktop/JujutsuLang/jujutsu.l"
 
 
     /* ============================================================== */
     /*  1. COMMENTS  (consumed silently)                               */
     /* ============================================================== */
 
-#line 972 "lex.yy.c"
+#line 972 "/home/saif/Desktop/JujutsuLang/lex.yy.c"
 
 	while ( /*CONSTCOND*/1 )		/* loops until end-of-file is reached */
 		{
@@ -1027,28 +1027,28 @@ do_action:	/* This label is used only to access EOF actions. */
 
 case 1:
 YY_RULE_SETUP
-#line 54 "jujutsu.l"
+#line 54 "/home/saif/Desktop/JujutsuLang/jujutsu.l"
 { /* single-line comment — skip */ }
 	YY_BREAK
 case 2:
 YY_RULE_SETUP
-#line 55 "jujutsu.l"
+#line 55 "/home/saif/Desktop/JujutsuLang/jujutsu.l"
 { BEGIN(COMMENT); }
 	YY_BREAK
 case 3:
 YY_RULE_SETUP
-#line 56 "jujutsu.l"
+#line 56 "/home/saif/Desktop/JujutsuLang/jujutsu.l"
 { BEGIN(INITIAL); }
 	YY_BREAK
 case 4:
 /* rule 4 can match eol */
 YY_RULE_SETUP
-#line 57 "jujutsu.l"
+#line 57 "/home/saif/Desktop/JujutsuLang/jujutsu.l"
 { line_number++; }
 	YY_BREAK
 case 5:
 YY_RULE_SETUP
-#line 58 "jujutsu.l"
+#line 58 "/home/saif/Desktop/JujutsuLang/jujutsu.l"
 { /* skip comment body */ }
 	YY_BREAK
 /* ============================================================== */
@@ -1056,162 +1056,162 @@ YY_RULE_SETUP
 /* ============================================================== */
 case 6:
 YY_RULE_SETUP
-#line 64 "jujutsu.l"
+#line 64 "/home/saif/Desktop/JujutsuLang/jujutsu.l"
 { TOKEN(KW_INT); }
 	YY_BREAK
 case 7:
 YY_RULE_SETUP
-#line 65 "jujutsu.l"
+#line 65 "/home/saif/Desktop/JujutsuLang/jujutsu.l"
 { TOKEN(KW_FLOAT); }
 	YY_BREAK
 case 8:
 YY_RULE_SETUP
-#line 66 "jujutsu.l"
+#line 66 "/home/saif/Desktop/JujutsuLang/jujutsu.l"
 { TOKEN(KW_DOUBLE); }
 	YY_BREAK
 case 9:
 YY_RULE_SETUP
-#line 67 "jujutsu.l"
+#line 67 "/home/saif/Desktop/JujutsuLang/jujutsu.l"
 { TOKEN(KW_CHAR); }
 	YY_BREAK
 case 10:
 YY_RULE_SETUP
-#line 68 "jujutsu.l"
+#line 68 "/home/saif/Desktop/JujutsuLang/jujutsu.l"
 { TOKEN(KW_VOID); }
 	YY_BREAK
 case 11:
 YY_RULE_SETUP
-#line 69 "jujutsu.l"
+#line 69 "/home/saif/Desktop/JujutsuLang/jujutsu.l"
 { TOKEN(KW_IF); }
 	YY_BREAK
 case 12:
 YY_RULE_SETUP
-#line 70 "jujutsu.l"
+#line 70 "/home/saif/Desktop/JujutsuLang/jujutsu.l"
 { TOKEN(KW_ELSE); }
 	YY_BREAK
 case 13:
 YY_RULE_SETUP
-#line 71 "jujutsu.l"
+#line 71 "/home/saif/Desktop/JujutsuLang/jujutsu.l"
 { TOKEN(KW_SWITCH); }
 	YY_BREAK
 case 14:
 YY_RULE_SETUP
-#line 72 "jujutsu.l"
+#line 72 "/home/saif/Desktop/JujutsuLang/jujutsu.l"
 { TOKEN(KW_CASE); }
 	YY_BREAK
 case 15:
 YY_RULE_SETUP
-#line 73 "jujutsu.l"
+#line 73 "/home/saif/Desktop/JujutsuLang/jujutsu.l"
 { TOKEN(KW_FOR); }
 	YY_BREAK
 case 16:
 YY_RULE_SETUP
-#line 74 "jujutsu.l"
+#line 74 "/home/saif/Desktop/JujutsuLang/jujutsu.l"
 { TOKEN(KW_WHILE); }
 	YY_BREAK
 case 17:
 YY_RULE_SETUP
-#line 75 "jujutsu.l"
+#line 75 "/home/saif/Desktop/JujutsuLang/jujutsu.l"
 { TOKEN(KW_DO); }
 	YY_BREAK
 case 18:
 YY_RULE_SETUP
-#line 76 "jujutsu.l"
+#line 76 "/home/saif/Desktop/JujutsuLang/jujutsu.l"
 { TOKEN(KW_BREAK); }
 	YY_BREAK
 case 19:
 YY_RULE_SETUP
-#line 77 "jujutsu.l"
+#line 77 "/home/saif/Desktop/JujutsuLang/jujutsu.l"
 { TOKEN(KW_CONTINUE); }
 	YY_BREAK
 case 20:
 YY_RULE_SETUP
-#line 78 "jujutsu.l"
+#line 78 "/home/saif/Desktop/JujutsuLang/jujutsu.l"
 { TOKEN(KW_RETURN); }
 	YY_BREAK
 case 21:
 YY_RULE_SETUP
-#line 79 "jujutsu.l"
+#line 79 "/home/saif/Desktop/JujutsuLang/jujutsu.l"
 { TOKEN(KW_STRUCT); }
 	YY_BREAK
 case 22:
 YY_RULE_SETUP
-#line 80 "jujutsu.l"
+#line 80 "/home/saif/Desktop/JujutsuLang/jujutsu.l"
 { TOKEN(KW_TYPEDEF); }
 	YY_BREAK
 case 23:
 YY_RULE_SETUP
-#line 81 "jujutsu.l"
+#line 81 "/home/saif/Desktop/JujutsuLang/jujutsu.l"
 { TOKEN(KW_ENUM); }
 	YY_BREAK
 case 24:
 YY_RULE_SETUP
-#line 82 "jujutsu.l"
+#line 82 "/home/saif/Desktop/JujutsuLang/jujutsu.l"
 { TOKEN(KW_CONST); }
 	YY_BREAK
 case 25:
 YY_RULE_SETUP
-#line 83 "jujutsu.l"
+#line 83 "/home/saif/Desktop/JujutsuLang/jujutsu.l"
 { TOKEN(KW_STATIC); }
 	YY_BREAK
 case 26:
 YY_RULE_SETUP
-#line 84 "jujutsu.l"
+#line 84 "/home/saif/Desktop/JujutsuLang/jujutsu.l"
 { TOKEN(KW_EXTERN); }
 	YY_BREAK
 case 27:
 YY_RULE_SETUP
-#line 85 "jujutsu.l"
+#line 85 "/home/saif/Desktop/JujutsuLang/jujutsu.l"
 { TOKEN(KW_SIZEOF); }
 	YY_BREAK
 case 28:
 YY_RULE_SETUP
-#line 86 "jujutsu.l"
+#line 86 "/home/saif/Desktop/JujutsuLang/jujutsu.l"
 { TOKEN(KW_GOTO); }
 	YY_BREAK
 case 29:
 YY_RULE_SETUP
-#line 87 "jujutsu.l"
+#line 87 "/home/saif/Desktop/JujutsuLang/jujutsu.l"
 { TOKEN(KW_MAIN); }
 	YY_BREAK
 case 30:
 YY_RULE_SETUP
-#line 88 "jujutsu.l"
+#line 88 "/home/saif/Desktop/JujutsuLang/jujutsu.l"
 { TOKEN(KW_UNION); }
 	YY_BREAK
 case 31:
 YY_RULE_SETUP
-#line 89 "jujutsu.l"
+#line 89 "/home/saif/Desktop/JujutsuLang/jujutsu.l"
 { TOKEN(KW_VOLATILE); }
 	YY_BREAK
 case 32:
 YY_RULE_SETUP
-#line 90 "jujutsu.l"
+#line 90 "/home/saif/Desktop/JujutsuLang/jujutsu.l"
 { TOKEN(KW_REGISTER); }
 	YY_BREAK
 case 33:
 YY_RULE_SETUP
-#line 91 "jujutsu.l"
+#line 91 "/home/saif/Desktop/JujutsuLang/jujutsu.l"
 { TOKEN(KW_SIGNED); }
 	YY_BREAK
 case 34:
 YY_RULE_SETUP
-#line 92 "jujutsu.l"
+#line 92 "/home/saif/Desktop/JujutsuLang/jujutsu.l"
 { TOKEN(KW_UNSIGNED); }
 	YY_BREAK
 case 35:
 YY_RULE_SETUP
-#line 93 "jujutsu.l"
+#line 93 "/home/saif/Desktop/JujutsuLang/jujutsu.l"
 { TOKEN(KW_BREAKPOINT); }
 	YY_BREAK
 case 36:
 YY_RULE_SETUP
-#line 94 "jujutsu.l"
+#line 94 "/home/saif/Desktop/JujutsuLang/jujutsu.l"
 { TOKEN(KW_PRINTF); }
 	YY_BREAK
 case 37:
 YY_RULE_SETUP
-#line 95 "jujutsu.l"
+#line 95 "/home/saif/Desktop/JujutsuLang/jujutsu.l"
 { TOKEN(KW_SCANF); }
 	YY_BREAK
 /* ============================================================== */
@@ -1221,82 +1221,82 @@ YY_RULE_SETUP
 /* ============================================================== */
 case 38:
 YY_RULE_SETUP
-#line 103 "jujutsu.l"
+#line 103 "/home/saif/Desktop/JujutsuLang/jujutsu.l"
 { TOKEN(OP_LTE); }
 	YY_BREAK
 case 39:
 YY_RULE_SETUP
-#line 104 "jujutsu.l"
+#line 104 "/home/saif/Desktop/JujutsuLang/jujutsu.l"
 { TOKEN(OP_GTE); }
 	YY_BREAK
 case 40:
 YY_RULE_SETUP
-#line 105 "jujutsu.l"
+#line 105 "/home/saif/Desktop/JujutsuLang/jujutsu.l"
 { TOKEN(OP_MOD); }
 	YY_BREAK
 case 41:
 YY_RULE_SETUP
-#line 106 "jujutsu.l"
+#line 106 "/home/saif/Desktop/JujutsuLang/jujutsu.l"
 { TOKEN(OP_MUL); }
 	YY_BREAK
 case 42:
 YY_RULE_SETUP
-#line 107 "jujutsu.l"
+#line 107 "/home/saif/Desktop/JujutsuLang/jujutsu.l"
 { TOKEN(OP_DIV); }
 	YY_BREAK
 case 43:
 YY_RULE_SETUP
-#line 108 "jujutsu.l"
+#line 108 "/home/saif/Desktop/JujutsuLang/jujutsu.l"
 { TOKEN(OP_EQ); }
 	YY_BREAK
 case 44:
 YY_RULE_SETUP
-#line 109 "jujutsu.l"
+#line 109 "/home/saif/Desktop/JujutsuLang/jujutsu.l"
 { TOKEN(OP_NEQ); }
 	YY_BREAK
 case 45:
 YY_RULE_SETUP
-#line 110 "jujutsu.l"
+#line 110 "/home/saif/Desktop/JujutsuLang/jujutsu.l"
 { TOKEN(OP_AND); }
 	YY_BREAK
 case 46:
 YY_RULE_SETUP
-#line 111 "jujutsu.l"
+#line 111 "/home/saif/Desktop/JujutsuLang/jujutsu.l"
 { TOKEN(OP_INC); }
 	YY_BREAK
 case 47:
 YY_RULE_SETUP
-#line 112 "jujutsu.l"
+#line 112 "/home/saif/Desktop/JujutsuLang/jujutsu.l"
 { TOKEN(OP_DRAIN); }
 	YY_BREAK
 case 48:
 YY_RULE_SETUP
-#line 113 "jujutsu.l"
+#line 113 "/home/saif/Desktop/JujutsuLang/jujutsu.l"
 { TOKEN(OP_LT); }
 	YY_BREAK
 case 49:
 YY_RULE_SETUP
-#line 114 "jujutsu.l"
+#line 114 "/home/saif/Desktop/JujutsuLang/jujutsu.l"
 { TOKEN(OP_GT); }
 	YY_BREAK
 case 50:
 YY_RULE_SETUP
-#line 115 "jujutsu.l"
+#line 115 "/home/saif/Desktop/JujutsuLang/jujutsu.l"
 { TOKEN(OP_ASSIGN); }
 	YY_BREAK
 case 51:
 YY_RULE_SETUP
-#line 116 "jujutsu.l"
+#line 116 "/home/saif/Desktop/JujutsuLang/jujutsu.l"
 { TOKEN(OP_OR); }
 	YY_BREAK
 case 52:
 YY_RULE_SETUP
-#line 117 "jujutsu.l"
+#line 117 "/home/saif/Desktop/JujutsuLang/jujutsu.l"
 { TOKEN(OP_ADD); }
 	YY_BREAK
 case 53:
 YY_RULE_SETUP
-#line 118 "jujutsu.l"
+#line 118 "/home/saif/Desktop/JujutsuLang/jujutsu.l"
 { TOKEN(OP_NOT); }
 	YY_BREAK
 /* ============================================================== */
@@ -1305,22 +1305,22 @@ YY_RULE_SETUP
 /* ============================================================== */
 case 54:
 YY_RULE_SETUP
-#line 125 "jujutsu.l"
+#line 125 "/home/saif/Desktop/JujutsuLang/jujutsu.l"
 { yylval.fval = atof(yytext);    TOKEN(LIT_FLOAT); }
 	YY_BREAK
 case 55:
 YY_RULE_SETUP
-#line 126 "jujutsu.l"
+#line 126 "/home/saif/Desktop/JujutsuLang/jujutsu.l"
 { yylval.ival = atoi(yytext);    TOKEN(LIT_INT); }
 	YY_BREAK
 case 56:
 YY_RULE_SETUP
-#line 127 "jujutsu.l"
+#line 127 "/home/saif/Desktop/JujutsuLang/jujutsu.l"
 { yylval.cval = yytext[1];       TOKEN(LIT_CHAR); }
 	YY_BREAK
 case 57:
 YY_RULE_SETUP
-#line 128 "jujutsu.l"
+#line 128 "/home/saif/Desktop/JujutsuLang/jujutsu.l"
 { yylval.sval = strdup(yytext);  TOKEN(LIT_STRING); }
 	YY_BREAK
 /* ============================================================== */
@@ -1328,7 +1328,7 @@ YY_RULE_SETUP
 /* ============================================================== */
 case 58:
 YY_RULE_SETUP
-#line 134 "jujutsu.l"
+#line 134 "/home/saif/Desktop/JujutsuLang/jujutsu.l"
 { yylval.sval = strdup(yytext);  TOKEN(IDENTIFIER); }
 	YY_BREAK
 /* ============================================================== */
@@ -1337,67 +1337,67 @@ YY_RULE_SETUP
 /* ============================================================== */
 case 59:
 YY_RULE_SETUP
-#line 141 "jujutsu.l"
+#line 141 "/home/saif/Desktop/JujutsuLang/jujutsu.l"
 { TOKEN(ARROW); }
 	YY_BREAK
 case 60:
 YY_RULE_SETUP
-#line 142 "jujutsu.l"
+#line 142 "/home/saif/Desktop/JujutsuLang/jujutsu.l"
 { TOKEN(LPAREN); }
 	YY_BREAK
 case 61:
 YY_RULE_SETUP
-#line 143 "jujutsu.l"
+#line 143 "/home/saif/Desktop/JujutsuLang/jujutsu.l"
 { TOKEN(RPAREN); }
 	YY_BREAK
 case 62:
 YY_RULE_SETUP
-#line 144 "jujutsu.l"
+#line 144 "/home/saif/Desktop/JujutsuLang/jujutsu.l"
 { TOKEN(LBRACE); }
 	YY_BREAK
 case 63:
 YY_RULE_SETUP
-#line 145 "jujutsu.l"
+#line 145 "/home/saif/Desktop/JujutsuLang/jujutsu.l"
 { TOKEN(RBRACE); }
 	YY_BREAK
 case 64:
 YY_RULE_SETUP
-#line 146 "jujutsu.l"
+#line 146 "/home/saif/Desktop/JujutsuLang/jujutsu.l"
 { TOKEN(LBRACKET); }
 	YY_BREAK
 case 65:
 YY_RULE_SETUP
-#line 147 "jujutsu.l"
+#line 147 "/home/saif/Desktop/JujutsuLang/jujutsu.l"
 { TOKEN(RBRACKET); }
 	YY_BREAK
 case 66:
 YY_RULE_SETUP
-#line 148 "jujutsu.l"
+#line 148 "/home/saif/Desktop/JujutsuLang/jujutsu.l"
 { TOKEN(SEMICOLON); }
 	YY_BREAK
 case 67:
 YY_RULE_SETUP
-#line 149 "jujutsu.l"
+#line 149 "/home/saif/Desktop/JujutsuLang/jujutsu.l"
 { TOKEN(COMMA); }
 	YY_BREAK
 case 68:
 YY_RULE_SETUP
-#line 150 "jujutsu.l"
+#line 150 "/home/saif/Desktop/JujutsuLang/jujutsu.l"
 { TOKEN(DOT); }
 	YY_BREAK
 case 69:
 YY_RULE_SETUP
-#line 151 "jujutsu.l"
+#line 151 "/home/saif/Desktop/JujutsuLang/jujutsu.l"
 { TOKEN(COLON); }
 	YY_BREAK
 case 70:
 YY_RULE_SETUP
-#line 152 "jujutsu.l"
+#line 152 "/home/saif/Desktop/JujutsuLang/jujutsu.l"
 { TOKEN(AMPERSAND); }
 	YY_BREAK
 case 71:
 YY_RULE_SETUP
-#line 153 "jujutsu.l"
+#line 153 "/home/saif/Desktop/JujutsuLang/jujutsu.l"
 { TOKEN(HASH); }
 	YY_BREAK
 /* ============================================================== */
@@ -1406,12 +1406,12 @@ YY_RULE_SETUP
 case 72:
 /* rule 72 can match eol */
 YY_RULE_SETUP
-#line 159 "jujutsu.l"
+#line 159 "/home/saif/Desktop/JujutsuLang/jujutsu.l"
 { line_number++; }
 	YY_BREAK
 case 73:
 YY_RULE_SETUP
-#line 160 "jujutsu.l"
+#line 160 "/home/saif/Desktop/JujutsuLang/jujutsu.l"
 { /* skip horizontal whitespace */ }
 	YY_BREAK
 /* ============================================================== */
@@ -1419,17 +1419,17 @@ YY_RULE_SETUP
 /* ============================================================== */
 case 74:
 YY_RULE_SETUP
-#line 166 "jujutsu.l"
+#line 166 "/home/saif/Desktop/JujutsuLang/jujutsu.l"
 { fprintf(stderr,
                                 "Lexical Error at line %d: unexpected character '%s'\n",
                                 line_number, yytext); }
 	YY_BREAK
 case 75:
 YY_RULE_SETUP
-#line 170 "jujutsu.l"
+#line 170 "/home/saif/Desktop/JujutsuLang/jujutsu.l"
 ECHO;
 	YY_BREAK
-#line 1433 "lex.yy.c"
+#line 1433 "/home/saif/Desktop/JujutsuLang/lex.yy.c"
 case YY_STATE_EOF(INITIAL):
 case YY_STATE_EOF(COMMENT):
 	yyterminate();
@@ -2398,7 +2398,7 @@ void yyfree (void * ptr )
 
 #define YYTABLES_NAME "yytables"
 
-#line 170 "jujutsu.l"
+#line 170 "/home/saif/Desktop/JujutsuLang/jujutsu.l"
 
 
 /* ================================================================== */
