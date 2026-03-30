@@ -1,0 +1,34 @@
+CursedEnergy x Bind 2;
+CursedEnergy y Bind 3;
+CursedEnergy total Bind 0;
+CursedEnergy ans;
+
+CursedEnergy square()
+{
+    CursedEnergy t Bind y Amplify y;
+    SukunaRelease t;
+}
+
+ans Bind square();
+
+BindingLoop (x Bind 0; x Below 4; x Bind x Add 1)
+{
+    total Bind total Add x;
+}
+
+CursedCycle (total Below 10)
+{
+    total Bind total Add 1;
+}
+
+TriggerCondition (ans Above 8)
+{
+    total Bind total Add ans;
+}
+CounterMove
+{
+    total Bind total Drain 1;
+}
+
+CursedPrint("Final total:");
+CursedPrint(total);

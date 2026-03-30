@@ -1,0 +1,15 @@
+CursedEnergy result;
+
+CursedEnergy add(CursedEnergy a, CursedEnergy b)
+{
+    SukunaRelease a Add b;
+}
+CursedEnergy x;
+CursedEnergy y;
+CursedPrint("Enter value of x:");
+CursedScan(x);
+CursedPrint("Enter value of y:");
+CursedScan(y);
+result Bind add(x, y);
+CursedPrint("Result from add(x,y):");
+CursedPrint(result);

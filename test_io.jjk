@@ -1,0 +1,15 @@
+CursedEnergy x,i,j;
+CursedPrint("Enter a value of X:");
+CursedScan(x);
+CursedPrint("Value of i:");
+BindingLoop(i Bind 0; i BelowEq x; i Bind i Add 1)
+{
+    BindingLoop(j Bind 0; j Below x; j Bind j Add 1){
+    
+         TriggerCondition(i Above 2)
+         {
+            CursedPrint(i);
+            CursedPrint("Hell Yeah");
+         }
+    }
+}

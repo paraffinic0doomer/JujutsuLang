@@ -6,7 +6,7 @@
 /*      flex -o lex.yy.cpp jujutsu.l                                  */
 /*      g++ -o jujutsu lex.yy.cpp -lfl                                */
 /*  Run:                                                              */
-/*      ./jujutsu input.jjk output.tok                                */
+/*      ./jujutsucc input.jjk                                */
 /* ================================================================== */
 
 %{
@@ -90,6 +90,8 @@ int line_number = 1;
 "PositiveNegativeEnergy"    { TOKEN(KW_SIGNED); }
 "PureCursedEnergy"          { TOKEN(KW_UNSIGNED); }
 "CursedTrigger"             { TOKEN(KW_BREAKPOINT); }
+"CursedPrint"               { TOKEN(KW_PRINTF); }
+"CursedScan"                { TOKEN(KW_SCANF); }
 
     /* ============================================================== */
     /*  3. OPERATOR WORDS  (16 rules)                                  */
